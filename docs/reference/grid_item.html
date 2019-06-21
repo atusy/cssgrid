@@ -81,10 +81,27 @@
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/responsive.html">Responsive designs with cssgrid</a>
+    </li>
+  </ul>
+</li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/atusy/cssgrid">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -98,7 +115,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Construct an item to be contained by CSS grid layout</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/atusy/cssgrid/blob/master/R/grid-item.R'><code>R/grid-item.R</code></a></small>
     <div class="hidden name"><code>grid_item.Rd</code></div>
     </div>
 
@@ -118,6 +135,10 @@
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
+      <th>...</th>
+      <td><p>Items in the container</p></td>
+    </tr>
+    <tr>
       <th>row_start, row_end, row, column_start, column_end, column, area</th>
       <td><p>CSS properties of <code>gird-*</code>, whereas <code>grid-</code> is abbreviated, and hyphens are
 replaced by underscores. For example, the <code>row_start</code> argument is equivalent
@@ -134,6 +155,10 @@ corresponding CSS property.</p></td>
       <th>z_index, order</th>
       <td><p>A string to specify the corresponding CSS property (<code>z-index</code> and <code>order</code>,
 respectively)</p></td>
+    </tr>
+    <tr>
+      <th>style</th>
+      <td><p>Additional values of the style attribute such as <code>color: red;</code>.</p></td>
     </tr>
     </table>
     
