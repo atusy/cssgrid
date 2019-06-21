@@ -1,4 +1,5 @@
 .Ruserdata
+/vignettes/*_cache/
 
 # History files
 .Rhistory

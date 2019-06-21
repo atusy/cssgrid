@@ -11,10 +11,6 @@ CSS Grid Layout for R Markdown and Shiny
 
 ## Installation
 
-``` css
-.cssgrid p {margin: 0;}
-```
-
 ``` r
 source("https://install-github.me/atusy/cssgrid")
 ```

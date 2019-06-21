@@ -1,0 +1,54 @@
+---
+title: "Responsive designs with cssgrid"
+output: 
+  rmarkdown::html_vignette:
+    self_contained: FALSE
+vignette: >
+  %\VignetteIndexEntry{Responsive designs with cssgrid}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup-knit, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(cssgrid)
+library(htmltools)
+library(knitr)
+library(ggplot2)
+library(dplyr, warn.conflicts = FALSE)
+library(purrr)
+library(plotly, warn.conflicts = FALSE)
+```
+
+# Prepare plots
+
+```{r prepare, items, cache = TRUE}
+plots <- diamonds %>%
+  group_split(clarity) %>%
+  map(~ {
+    ggplot(.x) +
+      aes(price, fill = clarity) +
+      geom_density(show.legend = FALSE) +
+      scale_fill_discrete(drop = FALSE) +
+      labs(y = NULL) +
+      theme_minimal() +
+      facet_wrap(~clarity)
+  }) %>%
+  map(plotly::ggplotly) %>%
+  map(plotly::layout, showlegend = FALSE) %>%
+  tagList
+```
+
+# Print plots with CSS Grid Layout with auto-fill
+
+Change the window width and you'll see plots are re-arranged.
+
+```{r print}
+grid_layout(plots, auto_rows = "1fr", cols = "repeat(auto-fill, 6cm)")
+```
