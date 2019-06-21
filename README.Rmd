@@ -1,0 +1,38 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# cssgrid
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+CSS Grid Layout for R Markdown and Shiny
+
+## Installation
+
+```{css}
+.cssgrid p {margin: 0;}
+```
+
+
+``` r
+source("https://install-github.me/atusy/cssgrid")
+```
+
+## Example
+
+```{r area, results = 'asis'}
+library(cssgrid)
+style <- "border: solid black;"
+grid_layout(
+  grid_item("A", area = "a", style = style),
+  grid_item("B", area = "b", style = style),
+  grid_item("C", area = "c", style = style),
+  cols = c("1fr 2fr"), rows = c("1fr 1fr"), areas = c("a b", "a c"),
+  style = style
+)
+```
+

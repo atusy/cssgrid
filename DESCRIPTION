@@ -1,0 +1,27 @@
+Package: cssgrid
+Type: Package
+Title: Easy CSS Grid Layout For R Markdown And Shiny
+Version: 0.1.0
+Author: Atsushi Yasumoto [aut, cph, cre] (<https://orcid.org/0000-0002-8335-495X>)
+Authors@R: c(
+        person(
+            given = "Atsushi", family = "Yasumoto",
+            role = c("aut", "cph", "cre"),
+            email = "atusy.rpkg@gmail.com",
+            comment = c(ORCID = "0000-0002-8335-495X")
+        )
+    )
+Maintainer: Atsushi Yasumoto <atusy.rpkg@gmail.com>
+Description: Easy CSS grid layout for R Markdown and Shiny.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
+Imports:
+  htmltools
+Suggests: 
+    testthat (>= 2.1.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
