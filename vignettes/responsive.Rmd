@@ -18,7 +18,6 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(cssgrid)
-library(knitr)
 library(ggplot2)
 library(dplyr, warn.conflicts = FALSE)
 library(purrr)
