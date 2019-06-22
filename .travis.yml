@@ -1,0 +1,19 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+
+language: R
+sudo: true
+cache: packages
+latex: false
+fortran: false
+
+jobs:
+  include:
+  - r: release
+  - r: devel
+  - os: osx
+    r: release
+r_binary_packages:
+  - covr
+warnings_are_errors: false
+after_success:
+  - Rscript -e 'covr::codecov()'
