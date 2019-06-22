@@ -129,13 +129,11 @@
   <span class='kw'>rows</span> <span class='kw'>=</span> <span class='no'>template_rows</span>, <span class='kw'>template_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>cols</span> <span class='kw'>=</span> <span class='no'>template_columns</span>, <span class='kw'>template_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>areas</span> <span class='kw'>=</span> <span class='no'>template_areas</span>, <span class='kw'>template_areas</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>template</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>flow</span> <span class='kw'>=</span> <span class='no'>auto_flow</span>, <span class='kw'>auto_flow</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"row"</span>, <span class='st'>"column"</span>, <span class='st'>"dense"</span>),
-  <span class='kw'>auto_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>auto_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>row_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>column_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>justify_content</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>),
-  <span class='kw'>align_content</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>),
-  <span class='kw'>justify_items</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>), <span class='kw'>align_items</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>,
-  <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>), <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>flow</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"row"</span>, <span class='st'>"column"</span>, <span class='st'>"dense"</span>, <span class='st'>"row dense"</span>, <span class='st'>"column dense"</span>),
+  <span class='kw'>auto_flow</span> <span class='kw'>=</span> <span class='no'>flow</span>, <span class='kw'>auto_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>auto_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>row_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>justify_content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>align_content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>justify_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>align_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -187,9 +185,7 @@ Default values are <code>NULL</code> or <code>""</code>.</p></td>
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/align-content'>align-content</a>,
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items'>justify-items</a>,
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/align-items'>align_items</a>
-properties, respectively.`
-Possible values are "", "start", "center", or "end". Partial matching is used,
-and "" skip specifying the corresponding properties.</p></td>
+properties, respectively.`</p></td>
     </tr>
     <tr>
       <th>style</th>

@@ -1,5 +1,5 @@
 ---
-title: cssgrid
+title: Get started
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{cssgrid}
@@ -38,6 +38,8 @@ grid_layout(
 )
 ```
 
+<p></p>
+
 ```{r}
 library(cssgrid)
 ```
@@ -63,5 +65,64 @@ grid_layout(
   grid_item("B", row = "1 / 2", col = "2 / 3", style = style),
   grid_item("C", row = "2 / 3", col = "2 / 3", style = style),
   cols = c("1fr 2fr"), rows = c("1fr 1fr"), style = style
+)
+```
+
+## Tidyverse style coding
+
+```{r df, results = 'asis'}
+library(magrittr)
+tibble::tibble(
+  content = list(
+    tags$h1("Title"), tags$h2("Sidebar"), tags$h2("Article A"), tags$h2("Article B")
+  ),
+  area = c("title", "side", "A", "B"),
+  style = style
+) %>%
+  purrr::pmap(function(content, ...) grid_item(content, ...)) %>%
+  tagList %>%
+  grid_layout(
+    cols = c("1fr 2fr"), rows = c("auto, 1fr 1fr"),
+    areas = c(
+      "title title",
+      "side  A",
+      "side  B"
+    ),
+    style = style
+  )
+```
+<p></p>
+
+# Shiny UI
+
+Valid units for sizing elements in `shiny` package are limited to
+`px`, `%`, `em`, `pt`, `in`, `cm`, `mm`, `ex`, or `pc`.
+
+Thus, there is a difficulty when layouting one element with certain size and the other fitting to the rest of area, or split the rest of the area for more elements with variety of ratios.
+
+This is what CSS Grid Layout supports by the `fr` unit.
+
+```{css, echo = FALSE}
+.form-group .form-control {width: 100%;}
+```
+
+## Read button has auto width, and the rest of area is dominated by text input
+
+```{r}
+grid_layout(
+  shiny::textInput("url", "URL", "https://example.com", width = "100%"),
+  shiny::actionButton("read", "Read"),
+  rows = "1fr", cols = "1fr auto", column_gap = "10px"
+)
+```
+
+## Send button has auto width, and the rest of area is divided into 1:2 ratios
+
+```{r}
+grid_layout(
+  shiny::textInput("to", "To", width = "100%"),
+  shiny::textInput("message", "Message", width = "100%"),
+  shiny::actionButton("read", "Send"),
+  rows = "1fr", cols = "1fr 2fr auto", column_gap = "10px"
 )
 ```

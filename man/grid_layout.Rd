@@ -8,13 +8,11 @@ grid_layout(..., display = c("grid", "inline-grid"),
   rows = template_rows, template_rows = NULL,
   cols = template_columns, template_columns = NULL,
   areas = template_areas, template_areas = NULL, template = NULL,
-  flow = auto_flow, auto_flow = c("", "row", "column", "dense"),
-  auto_rows = NULL, auto_columns = NULL, row_gap = NULL,
-  column_gap = NULL, gap = NULL, grid = NULL,
-  justify_content = c("", "start", "center", "end"),
-  align_content = c("", "start", "center", "end"),
-  justify_items = c("", "start", "center", "end"), align_items = c("",
-  "start", "center", "end"), style = NULL, style_items = NULL)
+  flow = c("", "row", "column", "dense", "row dense", "column dense"),
+  auto_flow = flow, auto_rows = NULL, auto_columns = NULL,
+  row_gap = NULL, column_gap = NULL, gap = NULL, grid = NULL,
+  justify_content = NULL, align_content = NULL, justify_items = NULL,
+  align_items = NULL, style = NULL, style_items = NULL)
 }
 \arguments{
 \item{...}{Items in the container}
@@ -50,9 +48,7 @@ Default values are \code{NULL} or \code{""}.}
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/align-content}{align-content},
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items}{justify-items},
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/align-items}{align_items}
-properties, respectively.`
-Possible values are "", "start", "center", or "end". Partial matching is used,
-and "" skip specifying the corresponding properties.}
+properties, respectively.`}
 
 \item{style}{Additional values of the style attribute such as \code{color: red;}.}
 

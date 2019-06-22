@@ -5,11 +5,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>cssgrid • cssgrid</title>
+<title>Get started • cssgrid</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="cssgrid">
+<script src="../pkgdown.js"></script><meta property="og:title" content="Get started">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -80,7 +80,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>cssgrid</h1>
+      <h1>Get started</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/atusy/cssgrid/blob/master/vignettes/cssgrid.Rmd"><code>vignettes/cssgrid.Rmd</code></a></small>
@@ -144,6 +144,8 @@ body {box-sizing: border-box;}
 <div style="margin: 0;" class="foo">grid</div>
 </div>
 </div>
+<p>
+</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(cssgrid)</a></code></pre></div>
 <div id="simple-examples" class="section level1">
 <h1 class="hasAnchor">
@@ -228,6 +230,128 @@ body {box-sizing: border-box;}
     else .Internal(col(dim(x)))
 };border: solid black;'>C</div>
 </div>
+<div id="tidyverse-style-coding" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tidyverse-style-coding" class="anchor"></a>Tidyverse style coding</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(magrittr)</a>
+<a class="sourceLine" id="cb4-2" title="2">tibble<span class="op">::</span><span class="kw"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span>(</a>
+<a class="sourceLine" id="cb4-3" title="3">  <span class="dt">content =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/list">list</a></span>(</a>
+<a class="sourceLine" id="cb4-4" title="4">    tags<span class="op">$</span><span class="kw">h1</span>(<span class="st">"Title"</span>), tags<span class="op">$</span><span class="kw">h2</span>(<span class="st">"Sidebar"</span>), tags<span class="op">$</span><span class="kw">h2</span>(<span class="st">"Article A"</span>), tags<span class="op">$</span><span class="kw">h2</span>(<span class="st">"Article B"</span>)</a>
+<a class="sourceLine" id="cb4-5" title="5">  ),</a>
+<a class="sourceLine" id="cb4-6" title="6">  <span class="dt">area =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"title"</span>, <span class="st">"side"</span>, <span class="st">"A"</span>, <span class="st">"B"</span>),</a>
+<a class="sourceLine" id="cb4-7" title="7">  <span class="dt">style =</span> style</a>
+<a class="sourceLine" id="cb4-8" title="8">) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-9" title="9"><span class="st">  </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span>(<span class="cf">function</span>(content, ...) <span class="kw"><a href="../reference/grid_item.html">grid_item</a></span>(content, ...)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="st">  </span>tagList <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-11" title="11"><span class="st">  </span><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
+<a class="sourceLine" id="cb4-12" title="12">    <span class="dt">cols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 2fr"</span>), <span class="dt">rows =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"auto, 1fr 1fr"</span>),</a>
+<a class="sourceLine" id="cb4-13" title="13">    <span class="dt">areas =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(</a>
+<a class="sourceLine" id="cb4-14" title="14">      <span class="st">"title title"</span>,</a>
+<a class="sourceLine" id="cb4-15" title="15">      <span class="st">"side  A"</span>,</a>
+<a class="sourceLine" id="cb4-16" title="16">      <span class="st">"side  B"</span></a>
+<a class="sourceLine" id="cb4-17" title="17">    ),</a>
+<a class="sourceLine" id="cb4-18" title="18">    <span class="dt">style =</span> style</a>
+<a class="sourceLine" id="cb4-19" title="19">  )</a></code></pre></div>
+<div style="display: grid; grid-template-rows: auto, 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'title title' 'side  A' 'side  B';border: solid black;">
+<div style='grid-column: function (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
+        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) &lt;- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}; grid-area: title;border: solid black;'>
+<h1>Title</h1>
+</div>
+<div style='grid-column: function (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
+        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) &lt;- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}; grid-area: side;border: solid black;'>
+<h2>Sidebar</h2>
+</div>
+<div style='grid-column: function (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
+        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) &lt;- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}; grid-area: A;border: solid black;'>
+<h2>Article A</h2>
+</div>
+<div style='grid-column: function (x, as.factor = FALSE) 
+{
+    if (as.factor) {
+        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
+        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
+        dim(res) &lt;- dim(x)
+        res
+    }
+    else .Internal(col(dim(x)))
+}; grid-area: B;border: solid black;'>
+<h2>Article B</h2>
+</div>
+</div>
+<p>
+</p>
+</div>
+</div>
+<div id="shiny-ui" class="section level1">
+<h1 class="hasAnchor">
+<a href="#shiny-ui" class="anchor"></a>Shiny UI</h1>
+<p>Valid units for sizing elements in <code>shiny</code> package are limited to <code>px</code>, <code>%</code>, <code>em</code>, <code>pt</code>, <code>in</code>, <code>cm</code>, <code>mm</code>, <code>ex</code>, or <code>pc</code>.</p>
+<p>Thus, there is a difficulty when layouting one element with certain size and the other fitting to the rest of area, or split the rest of the area for more elements with variety of ratios.</p>
+<p>This is what CSS Grid Layout supports by the <code>fr</code> unit.</p>
+<style type="text/css">
+.form-group .form-control {width: 100%;}
+</style>
+<div id="read-button-has-auto-width-and-the-rest-of-area-is-dominated-by-text-input" class="section level2">
+<h2 class="hasAnchor">
+<a href="#read-button-has-auto-width-and-the-rest-of-area-is-dominated-by-text-input" class="anchor"></a>Read button has auto width, and the rest of area is dominated by text input</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
+<a class="sourceLine" id="cb5-2" title="2">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"url"</span>, <span class="st">"URL"</span>, <span class="st">"https://example.com"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
+<a class="sourceLine" id="cb5-3" title="3">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/actionButton">actionButton</a></span>(<span class="st">"read"</span>, <span class="st">"Read"</span>),</a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="dt">rows =</span> <span class="st">"1fr"</span>, <span class="dt">cols =</span> <span class="st">"1fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span></a>
+<a class="sourceLine" id="cb5-5" title="5">)</a></code></pre></div>
+<div style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr auto; grid-column-gap: 10px;">
+<div class="form-group shiny-input-container" style="width: 100%;">
+<label for="url">URL</label>
+<input id="url" type="text" class="form-control" value="https://example.com">
+</div>
+<button id="read" type="button" class="btn btn-default action-button">Read</button>
+</div>
+</div>
+<div id="send-button-has-auto-width-and-the-rest-of-area-is-divided-into-12-ratios" class="section level2">
+<h2 class="hasAnchor">
+<a href="#send-button-has-auto-width-and-the-rest-of-area-is-divided-into-12-ratios" class="anchor"></a>Send button has auto width, and the rest of area is divided into 1:2 ratios</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
+<a class="sourceLine" id="cb6-2" title="2">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"to"</span>, <span class="st">"To"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
+<a class="sourceLine" id="cb6-3" title="3">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"message"</span>, <span class="st">"Message"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
+<a class="sourceLine" id="cb6-4" title="4">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/actionButton">actionButton</a></span>(<span class="st">"read"</span>, <span class="st">"Send"</span>),</a>
+<a class="sourceLine" id="cb6-5" title="5">  <span class="dt">rows =</span> <span class="st">"1fr"</span>, <span class="dt">cols =</span> <span class="st">"1fr 2fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span></a>
+<a class="sourceLine" id="cb6-6" title="6">)</a></code></pre></div>
+<div style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr 2fr auto; grid-column-gap: 10px;">
+<div class="form-group shiny-input-container" style="width: 100%;">
+<label for="to">To</label>
+<input id="to" type="text" class="form-control" value="">
+</div>
+<div class="form-group shiny-input-container" style="width: 100%;">
+<label for="message">Message</label>
+<input id="message" type="text" class="form-control" value="">
+</div>
+<button id="read" type="button" class="btn btn-default action-button">Send</button>
+</div>
+</div>
 </div>
   </div>
 
@@ -236,7 +360,17 @@ body {box-sizing: border-box;}
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#simple-examples">Simple examples</a></li>
+<li>
+<a href="#simple-examples">Simple examples</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#tidyverse-style-coding">Tidyverse style coding</a></li>
+      </ul>
+</li>
+      <li>
+<a href="#shiny-ui">Shiny UI</a><ul class="nav nav-pills nav-stacked">
+<li><a href="#read-button-has-auto-width-and-the-rest-of-area-is-dominated-by-text-input">Read button has auto width, and the rest of area is dominated by text input</a></li>
+      <li><a href="#send-button-has-auto-width-and-the-rest-of-area-is-divided-into-12-ratios">Send button has auto width, and the rest of area is divided into 1:2 ratios</a></li>
+      </ul>
+</li>
       </ul>
 </div>
       </div>

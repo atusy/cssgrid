@@ -3,8 +3,9 @@
 \docType{import}
 \name{reexports}
 \alias{reexports}
-\alias{tags}
 \alias{div}
+\alias{tagList}
+\alias{tags}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -12,6 +13,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{htmltools}{\code{\link[htmltools]{tags}}, \code{\link[htmltools]{div}}}
+  \item{htmltools}{\code{\link[htmltools]{div}}, \code{\link[htmltools]{tagList}}, \code{\link[htmltools]{tags}}}
 }}
 

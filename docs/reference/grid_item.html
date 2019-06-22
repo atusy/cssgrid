@@ -127,9 +127,8 @@
 
     <pre class="usage"><span class='fu'>grid_item</span>(<span class='no'>...</span>, <span class='kw'>row_start</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>row_end</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>row</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>column_start</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column_end</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>area</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>justify_self</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>),
-  <span class='kw'>align_self</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"start"</span>, <span class='st'>"center"</span>, <span class='st'>"end"</span>), <span class='kw'>z_index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>order</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>area</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>justify_self</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>align_self</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>z_index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -147,9 +146,11 @@ corresponding CSS property.</p></td>
     </tr>
     <tr>
       <th>justify_self, align_self</th>
-      <td><p>One of <code>""</code>, <code>"start"</code>, <code>"center"</code>, or <code>"end"</code> which can be partial matched.
-<code>""</code> does not specify the corresponding CSS property (<code>justify-self</code>, and
-<code>align-self</code>, respctively).</p></td>
+      <td><p>Strings to specify values for the CSS's
+<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self'>justify-self</a>
+and
+<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/align-self'>align-self</a>
+properties.</p></td>
     </tr>
     <tr>
       <th>z_index, order</th>

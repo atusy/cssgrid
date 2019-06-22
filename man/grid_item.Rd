@@ -6,9 +6,8 @@
 \usage{
 grid_item(..., row_start = NULL, row_end = NULL, row = NULL,
   column_start = NULL, column_end = NULL, column = NULL,
-  area = NULL, justify_self = c("", "start", "center", "end"),
-  align_self = c("", "start", "center", "end"), z_index = NULL,
-  order = NULL, style = NULL)
+  area = NULL, justify_self = NULL, align_self = NULL,
+  z_index = NULL, order = NULL, style = NULL)
 }
 \arguments{
 \item{...}{Items in the container}
@@ -18,9 +17,11 @@ replaced by underscores. For example, the \code{row_start} argument is equivalen
 to the CSS's \code{grid-row-start} property. Specify a string as a value for the
 corresponding CSS property.}
 
-\item{justify_self, align_self}{One of \code{""}, \code{"start"}, \code{"center"}, or \code{"end"} which can be partial matched.
-\code{""} does not specify the corresponding CSS property (\code{justify-self}, and
-\code{align-self}, respctively).}
+\item{justify_self, align_self}{Strings to specify values for the CSS's
+\href{https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self}{justify-self}
+and
+\href{https://developer.mozilla.org/en-US/docs/Web/CSS/align-self}{align-self}
+properties.}
 
 \item{z_index, order}{A string to specify the corresponding CSS property (\code{z-index} and \code{order},
 respectively)}
