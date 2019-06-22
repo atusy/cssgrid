@@ -6,9 +6,11 @@
 #'  to the CSS's `grid-row-start` property. Specify a string as a value for the
 #'  corresponding CSS property.
 #' @param justify_self,align_self
-#'  One of `""`, `"start"`, `"center"`, or `"end"` which can be partial matched.
-#'  `""` does not specify the corresponding CSS property (`justify-self`, and
-#'  `align-self`, respctively).
+#'  Strings to specify values for the CSS's
+#'  [`justify-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self)
+#'  and
+#'  [`align-self`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-self)
+#'  properties.
 #' @param z_index,order
 #'  A string to specify the corresponding CSS property (`z-index` and `order`,
 #'  respectively)
@@ -24,14 +26,12 @@ grid_item <- function(
   column_end = NULL,
   column = NULL,
   area = NULL,
-  justify_self = c("", "start", "center", "end"),
-  align_self = c("", "start", "center", "end"),
+  justify_self = NULL,
+  align_self = NULL,
   z_index = NULL,
   order = NULL,
   style = NULL
 ) {
-  justify_self <- match.arg(justify_self)
-  align_self <- match.arg(align_self)
   div(
     ...,
     style = paste0(construct_style(

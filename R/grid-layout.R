@@ -34,8 +34,6 @@
 #'  [`justify-items`](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-items),
 #'  [`align_items`](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items)
 #'  properties, respectively.`
-#'  Possible values are "", "start", "center", or "end". Partial matching is used,
-#'  and "" skip specifying the corresponding properties.
 #' @param style Additional values of the style attribute such as `color: red;`.
 # @param itemize
 #  Whether to automatically itemize `...` (Default: `FALSE``).
@@ -57,28 +55,24 @@ grid_layout <- function(
   cols = template_columns, template_columns = NULL,
   areas = template_areas, template_areas = NULL,
   template = NULL,
-  flow = auto_flow, auto_flow = c("", "row", "column", "dense"),
+  flow = c("", "row", "column", "dense", "row dense", "column dense"), auto_flow = flow,
   auto_rows =  NULL,
   auto_columns = NULL,
   row_gap = NULL,
   column_gap = NULL,
   gap = NULL,
   grid = NULL,
-  justify_content = c("", "start", "center", "end"),
-  align_content = c("", "start", "center", "end"),
-  justify_items = c("", "start", "center", "end"),
-  align_items = c("", "start", "center", "end"),
+  justify_content = NULL,
+  align_content = NULL,
+  justify_items = NULL,
+  align_items = NULL,
   style = NULL,
   # itemize = FALSE,
   style_items = NULL
 ) {
   display <- match.arg(display)
-  flow <- match.arg(flow, auto_flow)
-  justify_content <- match.arg(justify_content)
-  align_content <- match.arg(align_content)
-  justify_items <- match.arg(justify_items)
-  align_items <- match.arg(align_items)
-  force(c(rows, cols, areas, flow))
+  flow <- match.arg(flow)
+  force(c(rows, cols, areas, auto_flow))
 
   # if (isTRUE(itemize)) itemize <- div
   # items <- if (is.function(itemize)) {
@@ -94,7 +88,7 @@ grid_layout <- function(
       "grid-template-columns" = collapse(cols),
       "grid-template-areas" = construct_areas(areas),
       "grid-template" = template,
-      "grid-auto-flow" = flow,
+      "grid-auto-flow" = auto_flow,
       "grid-auto-rows" = auto_rows,
       "grid-auto-columns" = auto_columns,
       "justify-content" = justify_content,
