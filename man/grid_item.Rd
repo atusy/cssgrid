@@ -5,7 +5,7 @@
 \title{Construct an item to be contained by CSS grid layout}
 \usage{
 grid_item(..., row_start = NULL, row_end = NULL, row = NULL,
-  column_start = NULL, column_end = NULL, column = NULL,
+  column_start = NULL, column_end = NULL, col = NULL, column = col,
   area = NULL, justify_self = NULL, align_self = NULL,
   z_index = NULL, order = NULL, style = NULL)
 }
@@ -16,6 +16,8 @@ grid_item(..., row_start = NULL, row_end = NULL, row = NULL,
 replaced by underscores. For example, the \code{row_start} argument is equivalent
 to the CSS's \code{grid-row-start} property. Specify a string as a value for the
 corresponding CSS property.}
+
+\item{col}{An alias of column}
 
 \item{justify_self, align_self}{Strings to specify values for the CSS's
 \href{https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self}{justify-self}

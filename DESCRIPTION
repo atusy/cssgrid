@@ -33,3 +33,13 @@ Suggests:
     plotly,
     covr
 VignetteBuilder: knitr
+Collate: 
+    'collapse.R'
+    'construct-areas.R'
+    'construct-style.R'
+    'grid-rowwise.R'
+    'grid-colwise.R'
+    'grid-item.R'
+    'grid-layout.R'
+    'helpers.R'
+    're-export.R'
