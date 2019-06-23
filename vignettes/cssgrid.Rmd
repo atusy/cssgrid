@@ -12,7 +12,6 @@ body {box-sizing: border-box;}
 .cssgrid p {margin: 0;}
 ```
 
-
 ```{r knit-opt, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -80,7 +79,7 @@ tibble::tibble(
   style = style
 ) %>%
   purrr::pmap(function(content, ...) grid_item(content, ...)) %>%
-  tagList %>%
+  # tagList %>%
   grid_layout(
     cols = c("1fr 2fr"), rows = c("auto, 1fr 1fr"),
     areas = c(
@@ -112,17 +111,24 @@ This is what CSS Grid Layout supports by the `fr` unit.
 grid_layout(
   shiny::textInput("url", "URL", "https://example.com", width = "100%"),
   shiny::actionButton("read", "Read"),
-  rows = "1fr", cols = "1fr auto", column_gap = "10px"
+  rows = "auto", cols = "1fr auto", column_gap = "10px"
 )
 ```
 
 ## Send button has auto width, and the rest of area is divided into 1:2 ratios
 
+`grid_rowwise` is an alternative to `grid_layout` when layouting in 1 row.
+
+`grid_rowwise` will add column size "auto" in case additional grids are required.
+
 ```{r}
-grid_layout(
+items <- tagList(
   shiny::textInput("to", "To", width = "100%"),
   shiny::textInput("message", "Message", width = "100%"),
-  shiny::actionButton("read", "Send"),
-  rows = "1fr", cols = "1fr 2fr auto", column_gap = "10px"
+  shiny::actionButton("read", "Send")
 )
+grid_rowwise(items, cols = "1fr 2fr auto", column_gap = "10px")
+# This one misses cols for 3rd item, which will be treated as "auto".
+# Thus the result becomes identical to the above.
+grid_rowwise(items, cols = "1fr 2fr", column_gap = "10px")
 ```
