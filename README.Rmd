@@ -19,17 +19,12 @@ CSS Grid Layout for R Markdown and Shiny
 source("https://install-github.me/atusy/cssgrid")
 ```
 
-## Example
+## Examples
 
-```{r area, results = 'asis'}
-library(cssgrid)
-style <- "border: solid black;"
-grid_layout(
-  grid_item("A", area = "a", style = style),
-  grid_item("B", area = "b", style = style),
-  grid_item("C", area = "c", style = style),
-  cols = c("1fr 2fr"), rows = c("1fr 1fr"), areas = c("a b", "a c"),
-  style = style
-)
-```
+Take a look at
 
+- Get Started \
+  <https://cssgrid.atusy.net/articles/cssgrid.html>
+
+- Responsive designs with cssgrid \
+  <https://cssgrid.atusy.net/articles/responsive.html>
