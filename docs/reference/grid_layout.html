@@ -125,15 +125,16 @@
     
     </div>
 
-    <pre class="usage"><span class='fu'>grid_layout</span>(<span class='no'>...</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"grid"</span>, <span class='st'>"inline-grid"</span>),
-  <span class='kw'>rows</span> <span class='kw'>=</span> <span class='no'>template_rows</span>, <span class='kw'>template_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <pre class="usage"><span class='fu'>grid_layout</span>(<span class='no'>...</span>, <span class='kw'>display</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"grid"</span>, <span class='st'>"inline-grid"</span>), <span class='kw'>grid</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>template</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>rows</span> <span class='kw'>=</span> <span class='no'>template_rows</span>, <span class='kw'>template_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>cols</span> <span class='kw'>=</span> <span class='no'>template_columns</span>, <span class='kw'>template_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>areas</span> <span class='kw'>=</span> <span class='no'>template_areas</span>, <span class='kw'>template_areas</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>template</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>flow</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"row"</span>, <span class='st'>"column"</span>, <span class='st'>"dense"</span>, <span class='st'>"row dense"</span>, <span class='st'>"column dense"</span>),
-  <span class='kw'>auto_flow</span> <span class='kw'>=</span> <span class='no'>flow</span>, <span class='kw'>auto_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>auto_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>row_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>grid</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>areas</span> <span class='kw'>=</span> <span class='no'>template_areas</span>, <span class='kw'>template_areas</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>flow</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>, <span class='st'>"row"</span>,
+  <span class='st'>"column"</span>, <span class='st'>"dense"</span>, <span class='st'>"row dense"</span>, <span class='st'>"column dense"</span>), <span class='kw'>auto_flow</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>""</span>,
+  <span class='st'>"row"</span>, <span class='st'>"column"</span>, <span class='st'>"dense"</span>, <span class='st'>"row dense"</span>, <span class='st'>"column dense"</span>),
+  <span class='kw'>auto_rows</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>auto_cols</span> <span class='kw'>=</span> <span class='no'>auto_columns</span>, <span class='kw'>auto_columns</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>row_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column_gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>gap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
   <span class='kw'>justify_content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>align_content</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>justify_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>align_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+  <span class='kw'>align_items</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -148,9 +149,21 @@
 Partial matching is used.</p></td>
     </tr>
     <tr>
-      <th>rows, cols, areas, flow</th>
+      <th>template, auto_flow, auto_rows, auto_columns, row_gap, column_gap, gap, grid</th>
+      <td><p>CSS properties of <code>gird-*</code>, whereas <code>grid-</code> is abbreviated, and hyphens
+are replaced by underscores. Specify string that muches the style of a
+certain CSS property. For example, the <code>template_rows</code> argument is
+equivalent to the CSS's <code>grid-template-rows</code> property. An exception is the
+<code>grid</code> argument which is equivalent to the CSS's <code>grid</code> property. The
+<code>auto_flow</code> argument can be specified by <code>""</code>, <code>"row"</code>, <code>"column"</code> or <code>"dense"</code>.
+Partial matching is used and <code>""</code> skip specifying <code>grid-flow</code>. For details,
+see documents of <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout#CSS_properties'>CSS properties of CSS Grid Layout by Mozilla</a>.
+Default values are <code>NULL</code> or <code>""</code>.</p></td>
+    </tr>
+    <tr>
+      <th>rows, cols, areas, flow, auto_cols</th>
       <td><p>Aliases of <code>template_rows</code>, <code>template_columns</code>, and <code>template_areas</code>,
-respectively`</p></td>
+<code>auto_columns</code>, respectively`</p></td>
     </tr>
     <tr>
       <th>template_rows, template_columns</th>
@@ -167,18 +180,6 @@ the name of area and the position of area, respectively.
 Default is <code>NULL</code>.</p></td>
     </tr>
     <tr>
-      <th>template, auto_flow, auto_rows, auto_columns, row_gap, column_gap, gap, grid</th>
-      <td><p>CSS properties of <code>gird-*</code>, whereas <code>grid-</code> is abbreviated, and hyphens
-are replaced by underscores. Specify string that muches the style of a
-certain CSS property. For example, the <code>template_rows</code> argument is
-equivalent to the CSS's <code>grid-template-rows</code> property. An exception is the
-<code>grid</code> argument which is equivalent to the CSS's <code>grid</code> property. The
-<code>auto_flow</code> argument can be specified by <code>""</code>, <code>"row"</code>, <code>"column"</code> or <code>"dense"</code>.
-Partial matching is used and <code>""</code> skip specifying <code>grid-flow</code>. For details,
-see documents of <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout#CSS_properties'>CSS properties of CSS Grid Layout by Mozilla</a>.
-Default values are <code>NULL</code> or <code>""</code>.</p></td>
-    </tr>
-    <tr>
       <th>justify_content, align_content, justify_items, align_items</th>
       <td><p>Arguments equivalent to the CSS's
 <a href='https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content'>justify-content</a>,
@@ -190,10 +191,6 @@ properties, respectively.`</p></td>
     <tr>
       <th>style</th>
       <td><p>Additional values of the style attribute such as <code>color: red;</code>.</p></td>
-    </tr>
-    <tr>
-      <th>style_items</th>
-      <td><p>A common style attribute for items when <code>itemize = TRUE</code></p></td>
     </tr>
     </table>
     

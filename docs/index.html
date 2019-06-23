@@ -107,37 +107,10 @@
 <a class="sourceLine" id="cb2-7" title="7">  <span class="dt">cols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 2fr"</span>), <span class="dt">rows =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 1fr"</span>), <span class="dt">areas =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a b"</span>, <span class="st">"a c"</span>),</a>
 <a class="sourceLine" id="cb2-8" title="8">  <span class="dt">style =</span> style</a>
 <a class="sourceLine" id="cb2-9" title="9">)</a></code></pre></div>
-<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'a b' 'a c';border: solid black;">
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: a;border: solid black;'>A</div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: b;border: solid black;'>B</div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: c;border: solid black;'>C</div>
+<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'a b' 'a c'; border: solid black;">
+<div style="grid-area: a; border: solid black;">A</div>
+<div style="grid-area: b; border: solid black;">B</div>
+<div style="grid-area: c; border: solid black;">C</div>
 </div>
 </div>
 </div>

@@ -95,52 +95,16 @@ body {box-sizing: border-box;}
 .cssgrid p {margin: 0;}
 </style>
 <div style="display: grid; grid-template-rows: 1lh 1lh; grid-template-columns: 1.5rem 1.5rem 1.5rem; grid-template-areas: 'a b c' 'd d d'; grid-gap: .5rem;" class="cssgrid">
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: a;border: solid black; text-align: center;'>
+<div style="grid-area: a; border: solid black; text-align: center;">
 <div style="margin: 0;" class="foo">C</div>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: b;border: solid black; text-align: center;'>
+<div style="grid-area: b; border: solid black; text-align: center;">
 <div style="margin: 0;" class="foo">S</div>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: c;border: solid black; text-align: center;'>
+<div style="grid-area: c; border: solid black; text-align: center;">
 <div style="margin: 0;" class="foo">S</div>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: d;border: solid black; text-align: center;'>
+<div style="grid-area: d; border: solid black; text-align: center;">
 <div style="margin: 0;" class="foo">grid</div>
 </div>
 </div>
@@ -158,37 +122,10 @@ body {box-sizing: border-box;}
 <a class="sourceLine" id="cb2-6" title="6">  <span class="dt">cols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 2fr"</span>), <span class="dt">rows =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 1fr"</span>), <span class="dt">areas =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"a b"</span>, <span class="st">"a c"</span>),</a>
 <a class="sourceLine" id="cb2-7" title="7">  <span class="dt">style =</span> style</a>
 <a class="sourceLine" id="cb2-8" title="8">)</a></code></pre></div>
-<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'a b' 'a c';border: solid black;">
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: a;border: solid black;'>A</div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: b;border: solid black;'>B</div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: c;border: solid black;'>C</div>
+<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'a b' 'a c'; border: solid black;">
+<div style="grid-area: a; border: solid black;">A</div>
+<div style="grid-area: b; border: solid black;">B</div>
+<div style="grid-area: c; border: solid black;">C</div>
 </div>
 <p>
 </p>
@@ -198,37 +135,10 @@ body {box-sizing: border-box;}
 <a class="sourceLine" id="cb3-4" title="4">  <span class="kw"><a href="../reference/grid_item.html">grid_item</a></span>(<span class="st">"C"</span>, <span class="dt">row =</span> <span class="st">"2 / 3"</span>, <span class="dt">col =</span> <span class="st">"2 / 3"</span>, <span class="dt">style =</span> style),</a>
 <a class="sourceLine" id="cb3-5" title="5">  <span class="dt">cols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 2fr"</span>), <span class="dt">rows =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 1fr"</span>), <span class="dt">style =</span> style</a>
 <a class="sourceLine" id="cb3-6" title="6">)</a></code></pre></div>
-<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr;border: solid black;">
-<div col="1 / 2" style='grid-row: 1 / 3; grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-};border: solid black;'>A</div>
-<div col="2 / 3" style='grid-row: 1 / 2; grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-};border: solid black;'>B</div>
-<div col="2 / 3" style='grid-row: 2 / 3; grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-};border: solid black;'>C</div>
+<div style="display: grid; grid-template-rows: 1fr 1fr; grid-template-columns: 1fr 2fr; border: solid black;">
+<div style="grid-row: 1 / 3; grid-column: 1 / 2; border: solid black;">A</div>
+<div style="grid-row: 1 / 2; grid-column: 2 / 3; border: solid black;">B</div>
+<div style="grid-row: 2 / 3; grid-column: 2 / 3; border: solid black;">C</div>
 </div>
 <div id="tidyverse-style-coding" class="section level2">
 <h2 class="hasAnchor">
@@ -242,7 +152,7 @@ body {box-sizing: border-box;}
 <a class="sourceLine" id="cb4-7" title="7">  <span class="dt">style =</span> style</a>
 <a class="sourceLine" id="cb4-8" title="8">) <span class="op">%&gt;%</span></a>
 <a class="sourceLine" id="cb4-9" title="9"><span class="st">  </span>purrr<span class="op">::</span><span class="kw"><a href="https://purrr.tidyverse.org/reference/map2.html">pmap</a></span>(<span class="cf">function</span>(content, ...) <span class="kw"><a href="../reference/grid_item.html">grid_item</a></span>(content, ...)) <span class="op">%&gt;%</span></a>
-<a class="sourceLine" id="cb4-10" title="10"><span class="st">  </span>tagList <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb4-10" title="10"><span class="st">  </span><span class="co"># tagList %&gt;%</span></a>
 <a class="sourceLine" id="cb4-11" title="11"><span class="st">  </span><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
 <a class="sourceLine" id="cb4-12" title="12">    <span class="dt">cols =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"1fr 2fr"</span>), <span class="dt">rows =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"auto, 1fr 1fr"</span>),</a>
 <a class="sourceLine" id="cb4-13" title="13">    <span class="dt">areas =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(</a>
@@ -252,53 +162,17 @@ body {box-sizing: border-box;}
 <a class="sourceLine" id="cb4-17" title="17">    ),</a>
 <a class="sourceLine" id="cb4-18" title="18">    <span class="dt">style =</span> style</a>
 <a class="sourceLine" id="cb4-19" title="19">  )</a></code></pre></div>
-<div style="display: grid; grid-template-rows: auto, 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'title title' 'side  A' 'side  B';border: solid black;">
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: title;border: solid black;'>
+<div style="display: grid; grid-template-rows: auto, 1fr 1fr; grid-template-columns: 1fr 2fr; grid-template-areas: 'title title' 'side  A' 'side  B'; border: solid black;">
+<div style="grid-area: title; border: solid black;">
 <h1>Title</h1>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: side;border: solid black;'>
+<div style="grid-area: side; border: solid black;">
 <h2>Sidebar</h2>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: A;border: solid black;'>
+<div style="grid-area: A; border: solid black;">
 <h2>Article A</h2>
 </div>
-<div style='grid-column: function (x, as.factor = FALSE) 
-{
-    if (as.factor) {
-        labs &lt;- colnames(x, do.NULL = FALSE, prefix = "")
-        res &lt;- factor(.Internal(col(dim(x))), labels = labs)
-        dim(res) &lt;- dim(x)
-        res
-    }
-    else .Internal(col(dim(x)))
-}; grid-area: B;border: solid black;'>
+<div style="grid-area: B; border: solid black;">
 <h2>Article B</h2>
 </div>
 </div>
@@ -321,9 +195,9 @@ body {box-sizing: border-box;}
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
 <a class="sourceLine" id="cb5-2" title="2">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"url"</span>, <span class="st">"URL"</span>, <span class="st">"https://example.com"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
 <a class="sourceLine" id="cb5-3" title="3">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/actionButton">actionButton</a></span>(<span class="st">"read"</span>, <span class="st">"Read"</span>),</a>
-<a class="sourceLine" id="cb5-4" title="4">  <span class="dt">rows =</span> <span class="st">"1fr"</span>, <span class="dt">cols =</span> <span class="st">"1fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span></a>
+<a class="sourceLine" id="cb5-4" title="4">  <span class="dt">rows =</span> <span class="st">"auto"</span>, <span class="dt">cols =</span> <span class="st">"1fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span></a>
 <a class="sourceLine" id="cb5-5" title="5">)</a></code></pre></div>
-<div style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr auto; grid-column-gap: 10px;">
+<div style="display: grid; grid-template-rows: auto; grid-template-columns: 1fr auto; grid-column-gap: 10px;">
 <div class="form-group shiny-input-container" style="width: 100%;">
 <label for="url">URL</label>
 <input id="url" type="text" class="form-control" value="https://example.com">
@@ -334,13 +208,29 @@ body {box-sizing: border-box;}
 <div id="send-button-has-auto-width-and-the-rest-of-area-is-divided-into-12-ratios" class="section level2">
 <h2 class="hasAnchor">
 <a href="#send-button-has-auto-width-and-the-rest-of-area-is-divided-into-12-ratios" class="anchor"></a>Send button has auto width, and the rest of area is divided into 1:2 ratios</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="kw"><a href="../reference/grid_layout.html">grid_layout</a></span>(</a>
+<p><code>grid_rowwise</code> is an alternative to <code>grid_layout</code> when layouting in 1 row.</p>
+<p><code>grid_rowwise</code> will add column size “auto” in case additional grids are required.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">items &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/htmltools/topics/tag">tagList</a></span>(</a>
 <a class="sourceLine" id="cb6-2" title="2">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"to"</span>, <span class="st">"To"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
 <a class="sourceLine" id="cb6-3" title="3">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/textInput">textInput</a></span>(<span class="st">"message"</span>, <span class="st">"Message"</span>, <span class="dt">width =</span> <span class="st">"100%"</span>),</a>
-<a class="sourceLine" id="cb6-4" title="4">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/actionButton">actionButton</a></span>(<span class="st">"read"</span>, <span class="st">"Send"</span>),</a>
-<a class="sourceLine" id="cb6-5" title="5">  <span class="dt">rows =</span> <span class="st">"1fr"</span>, <span class="dt">cols =</span> <span class="st">"1fr 2fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span></a>
-<a class="sourceLine" id="cb6-6" title="6">)</a></code></pre></div>
-<div style="display: grid; grid-template-rows: 1fr; grid-template-columns: 1fr 2fr auto; grid-column-gap: 10px;">
+<a class="sourceLine" id="cb6-4" title="4">  shiny<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/shiny/topics/actionButton">actionButton</a></span>(<span class="st">"read"</span>, <span class="st">"Send"</span>)</a>
+<a class="sourceLine" id="cb6-5" title="5">)</a>
+<a class="sourceLine" id="cb6-6" title="6"><span class="kw"><a href="../reference/grid_rowwise.html">grid_rowwise</a></span>(items, <span class="dt">cols =</span> <span class="st">"1fr 2fr auto"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span>)</a></code></pre></div>
+<div style="display: grid; grid-template-columns: 1fr 2fr auto; grid-column-gap: 10px;">
+<div class="form-group shiny-input-container" style="width: 100%;">
+<label for="to">To</label>
+<input id="to" type="text" class="form-control" value="">
+</div>
+<div class="form-group shiny-input-container" style="width: 100%;">
+<label for="message">Message</label>
+<input id="message" type="text" class="form-control" value="">
+</div>
+<button id="read" type="button" class="btn btn-default action-button">Send</button>
+</div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># This one misses cols for 3rd item, which will be treated as "auto".</span></a>
+<a class="sourceLine" id="cb7-2" title="2"><span class="co"># Thus the result becomes identical to the above.</span></a>
+<a class="sourceLine" id="cb7-3" title="3"><span class="kw"><a href="../reference/grid_rowwise.html">grid_rowwise</a></span>(items, <span class="dt">cols =</span> <span class="st">"1fr 2fr"</span>, <span class="dt">column_gap =</span> <span class="st">"10px"</span>)</a></code></pre></div>
+<div style="display: grid; grid-template-columns: 1fr 2fr auto; grid-column-gap: 10px;">
 <div class="form-group shiny-input-container" style="width: 100%;">
 <label for="to">To</label>
 <input id="to" type="text" class="form-control" value="">

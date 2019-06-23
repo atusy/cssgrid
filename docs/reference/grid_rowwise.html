@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Construct an item to be contained by CSS grid layout — grid_item • cssgrid</title>
+<title>Gird layout in single row or column — grid_rowwise • cssgrid</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,9 +30,9 @@
 
 
 
-<meta property="og:title" content="Construct an item to be contained by CSS grid layout — grid_item" />
+<meta property="og:title" content="Gird layout in single row or column — grid_rowwise" />
 
-<meta property="og:description" content="Construct an item to be contained by CSS grid layout" />
+<meta property="og:description" content="Gird layout in single row or column" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -114,56 +114,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Construct an item to be contained by CSS grid layout</h1>
-    <small class="dont-index">Source: <a href='https://github.com/atusy/cssgrid/blob/master/R/grid-item.R'><code>R/grid-item.R</code></a></small>
-    <div class="hidden name"><code>grid_item.Rd</code></div>
+    <h1>Gird layout in single row or column</h1>
+    <small class="dont-index">Source: <a href='https://github.com/atusy/cssgrid/blob/master/R/grid-rowwise.R'><code>R/grid-rowwise.R</code></a>, <a href='https://github.com/atusy/cssgrid/blob/master/R/grid-colwise.R'><code>R/grid-colwise.R</code></a></small>
+    <div class="hidden name"><code>grid_rowwise.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Construct an item to be contained by CSS grid layout</p>
+    <p>Gird layout in single row or column</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>grid_item</span>(<span class='no'>...</span>, <span class='kw'>row_start</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>row_end</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>row</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>column_start</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column_end</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>col</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>column</span> <span class='kw'>=</span> <span class='no'>col</span>,
-  <span class='kw'>area</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>justify_self</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>align_self</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>z_index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>grid_rowwise</span>(<span class='no'>...</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></span>(<span class='fl'>0L</span>))
+
+<span class='fu'>grid_colwise</span>(<span class='no'>...</span>, <span class='kw'>rows</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/character'>character</a></span>(<span class='fl'>0L</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>...</th>
-      <td><p>Items in the container</p></td>
+      <td><p>Items in CSS Grid Layout and arguments passed to <code><a href='grid_layout.html'>grid_layout</a></code>.</p></td>
     </tr>
     <tr>
-      <th>row_start, row_end, row, column_start, column_end, column, area</th>
-      <td><p>CSS properties of <code>gird-*</code>, whereas <code>grid-</code> is abbreviated, and hyphens are
-replaced by underscores. For example, the <code>row_start</code> argument is equivalent
-to the CSS's <code>grid-row-start</code> property. Specify a string as a value for the
-corresponding CSS property.</p></td>
-    </tr>
-    <tr>
-      <th>col</th>
-      <td><p>An alias of column</p></td>
-    </tr>
-    <tr>
-      <th>justify_self, align_self</th>
-      <td><p>Strings to specify values for the CSS's
-<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/justify-self'>justify-self</a>
-and
-<a href='https://developer.mozilla.org/en-US/docs/Web/CSS/align-self'>align-self</a>
-properties.</p></td>
-    </tr>
-    <tr>
-      <th>z_index, order</th>
-      <td><p>A string to specify the corresponding CSS property (<code>z-index</code> and <code>order</code>,
-respectively)</p></td>
-    </tr>
-    <tr>
-      <th>style</th>
-      <td><p>Additional values of the style attribute such as <code>color: red;</code>.</p></td>
+      <th>rows, cols</th>
+      <td><p>Sizes of rows and columns in a character vector.
+If the given number of sizes are less than the number of items,
+then <code>"auto"</code> is used for items missing sizes.</p></td>
     </tr>
     </table>
     
