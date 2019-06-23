@@ -2,17 +2,17 @@
 % Please edit documentation in R/construct-areas.R
 \name{construct_areas}
 \alias{construct_areas}
+\alias{construct_areas.grid_areas}
 \alias{construct_areas.default}
-\alias{construct_areas.character}
 \alias{construct_areas.data.frame}
 \alias{construct_areas.matrix}
 \title{Construct grid-template-areas property}
 \usage{
 construct_areas(x = NULL, ...)
 
-\method{construct_areas}{default}(x = NULL, ...)
+\method{construct_areas}{grid_areas}(x = NULL, ...)
 
-\method{construct_areas}{character}(x, ...)
+\method{construct_areas}{default}(x = NULL, ...)
 
 \method{construct_areas}{data.frame}(x, ...)
 
