@@ -36,7 +36,7 @@ plots <- diamonds %>%
       scale_fill_discrete(drop = FALSE) +
       labs(y = NULL) +
       theme_minimal() +
-      facet_wrap(~clarity)
+      facet_wrap(~ clarity)
   }) %>%
   map(plotly::ggplotly) %>%
   map(plotly::layout, showlegend = FALSE) %>%
