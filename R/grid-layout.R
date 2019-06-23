@@ -4,9 +4,9 @@
 #' @param display
 #'  Specifies the CSS's `display` property by `"display"`, `"inline-display"`.
 #'  Partial matching is used.
-#' @param rows,cols,areas,flow
+#' @param rows,cols,areas,flow,auto_cols
 #'  Aliases of `template_rows`, `template_columns`, and `template_areas`,
-#'  respectively`
+#'  `auto_columns`, respectively`
 #' @param template_rows,template_columns
 #'  A character vector to specify size of each rows and columns in the grid
 #'  such as `"100px 1fr"` or `c("100px", "1fr")`. Default is `NULL`.
@@ -39,8 +39,6 @@
 #  Whether to automatically itemize `...` (Default: `FALSE``).
 #  If `TRUE`, `...` are itemized by `div`.
 #  Alternatively, a function can be specified as itemizer.
-#' @param style_items
-#'  A common style attribute for items when `itemize = TRUE`
 #'
 #' @details
 #'  Default values of `NULL` or `""` indicate the corresponding CSS properties
@@ -51,52 +49,47 @@
 grid_layout <- function(
   ...,
   display = c("grid", "inline-grid"),
+  grid = NULL,
+  template = NULL,
   rows = template_rows, template_rows = NULL,
   cols = template_columns, template_columns = NULL,
   areas = template_areas, template_areas = NULL,
-  template = NULL,
-  flow = c("", "row", "column", "dense", "row dense", "column dense"), auto_flow = flow,
-  auto_rows =  NULL,
-  auto_columns = NULL,
+  flow =      c("", "row", "column", "dense", "row dense", "column dense"),
+  auto_flow = c("", "row", "column", "dense", "row dense", "column dense"),
+  auto_rows = NULL,
+  auto_cols = auto_columns, auto_columns = NULL,
   row_gap = NULL,
   column_gap = NULL,
   gap = NULL,
-  grid = NULL,
   justify_content = NULL,
   align_content = NULL,
   justify_items = NULL,
   align_items = NULL,
-  style = NULL,
-  # itemize = FALSE,
-  style_items = NULL
+  style = NULL
 ) {
   display <- match.arg(display)
   flow <- match.arg(flow)
-  force(c(rows, cols, areas, auto_flow))
-
-  # if (isTRUE(itemize)) itemize <- div
-  # items <- if (is.function(itemize)) {
-  #   tagList(lapply(list(...), itemize, style = style_items))
-  # } else {
-  #   tagList(...)
-  # }
+  if (flow == "") flow <- match.arg(auto_flow)
+  force(c(rows, cols, areas))
 
   tags$div(
-    style = paste0(construct_style(
+    style = collapse(construct_style(
       display = display,
+      # grid and grid-template are specified earlier because they reset some
+      # properties specified prior to them
+      "grid" = grid,
+      "grid-template" = template,
       "grid-template-rows" = collapse(rows),
       "grid-template-columns" = collapse(cols),
       "grid-template-areas" = construct_areas(areas),
-      "grid-template" = template,
-      "grid-auto-flow" = auto_flow,
+      "grid-auto-flow" = flow,
       "grid-auto-rows" = auto_rows,
-      "grid-auto-columns" = auto_columns,
+      "grid-auto-columns" = auto_cols,
       "justify-content" = justify_content,
       "align-content" = align_content,
       "grid-row-gap" = row_gap,
       "grid-column-gap" = column_gap,
       "grid-gap" = gap,
-      "grid" = grid,
       "justify-content" = justify_content,
       "align-content" = align_content,
       "justify-items" = justify_items,
